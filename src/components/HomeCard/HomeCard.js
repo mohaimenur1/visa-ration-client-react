@@ -21,7 +21,9 @@ const HomeCard = ({ service }) => {
             </ReactReadMoreReadLess>
           </p>
           {/* <p className="card-text">{service.description}</p> */}
-          <Link className="btn btn-primary">Details</Link>
+          <Link to={`/service/${service._id}`} className="btn btn-primary">
+            Details
+          </Link>
         </div>
       </div>
     </div>
