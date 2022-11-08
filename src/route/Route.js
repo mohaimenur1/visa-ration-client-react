@@ -14,6 +14,9 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
+        loader: async () => {
+          return fetch("http://localhost:5000/home");
+        },
         element: <HomePage />,
       },
       {
