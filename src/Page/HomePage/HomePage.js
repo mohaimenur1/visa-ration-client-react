@@ -1,6 +1,7 @@
 /** @format */
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Air from './img/air.png';
 import File from './img/files.png';
 import viva from './img/viva.png';
@@ -40,7 +41,7 @@ const HomePage = () => {
             <div className='carousel-item active'>
               <img src={Air} className='d-block h-75 img-fluid' alt='...' />
               <div className='carousel-caption d-none d-md-block'>
-                <h1>Fligh Booking?</h1>
+                <h1>Flight Booking?</h1>
                 <p>I am here to collect Flight ticket with best price.</p>
               </div>
             </div>
@@ -142,9 +143,13 @@ const HomePage = () => {
                 your outcome . Please feel free to come here and get your
                 Services.
               </p>
-              <button className='btn btn-outline-secondary' type='button'>
-                Example button
-              </button>
+              <Link
+                to='/service'
+                className='btn btn-outline-secondary'
+                type='button'
+              >
+                Go to Services
+              </Link>
             </div>
           </div>
         </div>

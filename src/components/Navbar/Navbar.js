@@ -1,15 +1,16 @@
 /** @format */
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
     <div>
       <nav className='navbar navbar-expand-lg bg-light'>
-        <div className='container-fluid'>
-          <a className='navbar-brand' href='#'>
+        <div className='container'>
+          <Link to='/' className='navbar-brand' href='#'>
             Visa-Ration
-          </a>
+          </Link>
           <button
             className='navbar-toggler'
             type='button'
@@ -22,24 +23,22 @@ const Navbar = () => {
             <span className='navbar-toggler-icon'></span>
           </button>
           <div className='collapse navbar-collapse' id='navbarNav'>
-            <ul className='navbar-nav'>
+            <ul className='navbar-nav ms-auto'>
               <li className='nav-item'>
-                <a className='nav-link active' aria-current='page' href='#'>
+                <Link to='/' className='nav-link active' aria-current='page'>
                   Home
-                </a>
+                </Link>
               </li>
               <li className='nav-item'>
-                <a className='nav-link' href='#'>
-                  Features
-                </a>
+                <Link to='/service' className='nav-link'>
+                  Services
+                </Link>
               </li>
               <li className='nav-item'>
-                <a className='nav-link' href='#'>
-                  Pricing
-                </a>
+                <Link className='nav-link'>My Reviews</Link>
               </li>
               <li className='nav-item'>
-                <a className='nav-link disabled'>Disabled</a>
+                <Link className='nav-link'>Add Service</Link>
               </li>
             </ul>
           </div>
