@@ -21,7 +21,7 @@ const ServiceCard = ({ service }) => {
             </ReactReadMoreReadLess>
           </p>
           {/* <p className="card-text">{service.description}</p>*/}
-          <Link href="#" className="btn btn-primary">
+          <Link to={`/service/${service._id}`} className="btn btn-primary">
             Details
           </Link>
         </div>
