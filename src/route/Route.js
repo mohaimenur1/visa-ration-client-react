@@ -3,6 +3,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Review from '../components/Review/Review';
 import Main from '../layout/Main';
+import Blog from '../Page/Blog/Blog';
 import HomePage from '../Page/HomePage/HomePage';
 import Login from '../Page/Login/Login';
 import ServiceDetails from '../Page/ServiceDetails/ServiceDetails';
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login />,
+      },
+      {
+        path: '/blog',
+        element: <Blog />,
       },
       // {
       //   path: '/reviews',

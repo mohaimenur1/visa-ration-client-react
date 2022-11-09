@@ -43,7 +43,7 @@ const ServiceDetails = () => {
   };
 
   useEffect(() => {
-    fetch('http://localhost:5000/reviews')
+    fetch(`http://localhost:5000/reviews/${reviewData.service}`)
       .then((res) => res.json())
       .then((data) => setReviewData(data));
   }, []);
