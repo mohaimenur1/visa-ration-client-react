@@ -8,7 +8,7 @@ import { AuthContext } from '../../context/UserContext';
 const ServiceDetails = () => {
   const details = useLoaderData();
   const { user } = useContext(AuthContext);
-  const [reviewData, setReviewData] = useState([]);
+  const [reviewData, setReviewData] = useState({});
   // console.log(details);
   const handleReviewSubmit = (e) => {
     e.preventDefault();
@@ -46,7 +46,7 @@ const ServiceDetails = () => {
     fetch(`http://localhost:5000/reviews/${details._id}`)
       .then((res) => res.json())
       .then((data) => setReviewData(data));
-  }, []);
+  }, [reviewData]);
 
   return (
     <div className='container mt-4'>

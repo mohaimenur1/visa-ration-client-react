@@ -1,11 +1,13 @@
-import { GoogleAuthProvider } from "firebase/auth";
-import React, { useContext, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/UserContext";
+/** @format */
+
+import { GoogleAuthProvider } from 'firebase/auth';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/UserContext';
 // import "./Login.css";
 
 const Login = () => {
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
   const { googleLogin, login } = useContext(AuthContext);
 
   const googleProvider = new GoogleAuthProvider();
@@ -13,7 +15,7 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const from = location.state?.from?.pathname || "/";
+  const from = location.state?.from?.pathname || '/';
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,7 +29,7 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         form.reset();
-        setError("");
+        setError('');
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -47,37 +49,37 @@ const Login = () => {
   };
 
   return (
-    <div className="container mt-5 ">
-      <h2 className="text-center link-text-color">Login Form</h2>
-      <div className="card shadow">
-        <form onSubmit={handleSubmit} className="mt-4 p-5">
-          <div className="form-outline mb-4">
-            <label className="form-label" htmlFor="form2Example1">
+    <div className='container mt-5 '>
+      <h2 className='text-center link-text-color'>Login Form</h2>
+      <div className='card shadow'>
+        <form onSubmit={handleSubmit} className='mt-4 p-5'>
+          <div className='form-outline mb-4'>
+            <label className='form-label' htmlFor='form2Example1'>
               Email address
             </label>
             <input
-              name="email"
-              type="email"
-              id="form2Example1"
-              className="form-control"
+              name='email'
+              type='email'
+              id='form2Example1'
+              className='form-control'
               required
             />
           </div>
 
-          <div className="form-outline mb-4">
-            <label className="form-label" htmlFor="form2Example2">
+          <div className='form-outline mb-4'>
+            <label className='form-label' htmlFor='form2Example2'>
               Password
             </label>
             <input
-              name="password"
-              type="password"
-              id="form2Example2"
-              className="form-control"
+              name='password'
+              type='password'
+              id='form2Example2'
+              className='form-control'
               required
             />
           </div>
 
-          <div className="row mb-4">
+          <div className='row mb-4'>
             {/* <div className="col d-flex justify-content-center">
               <div className="form-check link-text-color">
                 <input
@@ -94,23 +96,23 @@ const Login = () => {
               </div>
             </div> */}
 
-            <div className="col">
-              <span className="text-danger">{error}</span>
+            <div className='col'>
+              <span className='text-danger'>{error}</span>
             </div>
             {/* <div className="col">
               <Link className="link-text-color">Forgot password?</Link>
             </div> */}
           </div>
-          <div className="d-grid gap-2">
-            <button type="submit" className="btn login-btn-bg btn-block mb-4">
+          <div className='d-grid gap-2'>
+            <button type='submit' className='btn btn-primary btn-block mb-4'>
               Log In
             </button>
           </div>
 
-          <div className="text-center">
+          <div className='text-center'>
             <p>
-              Not a member?{" "}
-              <Link to="/register" className="link-text-color">
+              Not a member?{' '}
+              <Link to='/register' className='link-text-color'>
                 Register
               </Link>
             </p>
@@ -118,10 +120,10 @@ const Login = () => {
 
             <button
               onClick={handleGoogleSignIn}
-              type="button"
-              className="btn login-btn-bg btn-floating mx-1"
+              type='button'
+              className='btn btn-primary mx-1'
             >
-              <i className="fab fa-google"></i>
+              <i className='fab fa-google'></i>
             </button>
           </div>
         </form>
