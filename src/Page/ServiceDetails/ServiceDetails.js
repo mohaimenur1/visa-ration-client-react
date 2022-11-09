@@ -9,7 +9,7 @@ const ServiceDetails = () => {
   const details = useLoaderData();
   const { user } = useContext(AuthContext);
   const [reviewData, setReviewData] = useState([]);
-  //   console.log(details);
+  // console.log(details);
   const handleReviewSubmit = (e) => {
     e.preventDefault();
 
@@ -43,7 +43,7 @@ const ServiceDetails = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews/${reviewData.service}`)
+    fetch(`http://localhost:5000/reviews/${details._id}`)
       .then((res) => res.json())
       .then((data) => setReviewData(data));
   }, []);
@@ -62,7 +62,6 @@ const ServiceDetails = () => {
           </a>
         </div>
       </div>
-
       {/* review box */}
       <div className='review-write-section mt-5'>
         <h2 className='text-center'>Write Some Reviews</h2>
@@ -82,11 +81,21 @@ const ServiceDetails = () => {
           </button>
         </form>
       </div>
-
       {/* review cards */}
-      <div className='review-section'>
-        <Review reviewData={reviewData} />
-      </div>
+      {reviewData.length > 0 ? (
+        <div className='review-section'>
+          <Review reviewData={reviewData} />
+        </div>
+      ) : (
+        <div className='card container mt-4'>
+          <h2 className='text-center'>No Review Exist !!!!!</h2>
+        </div>
+      )}
+      {/* //{' '} */}
+      {/* <div className='review-section'>
+        // <Review reviewData={reviewData} />
+        //{' '}
+      </div> */}
     </div>
   );
 };

@@ -37,7 +37,7 @@ const Blog = () => {
         <div className='col-lg-6'>
           <div className='card bg-dark text-white'>
             <img
-              src='https://jwt.io/img/logo-asset.svg'
+              src='https://miro.medium.com/max/800/1*ulCspc56K_swYE1uuel_TA.png'
               className='card-img img-fluid h-100'
               alt='Stony Beach'
             />
