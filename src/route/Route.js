@@ -3,13 +3,16 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Review from '../components/Review/Review';
 import Main from '../layout/Main';
+import AddReview from '../Page/AddReview/AddReview';
 import Blog from '../Page/Blog/Blog';
 import HomePage from '../Page/HomePage/HomePage';
 import Login from '../Page/Login/Login';
+import MyReview from '../Page/MyReview/MyReview';
 import Register from '../Page/Register/Register';
 import ServiceDetails from '../Page/ServiceDetails/ServiceDetails';
 import ServicePage from '../Page/ServicePage/ServicePage';
 import Services from '../Page/Services/Services';
+import PrivetRoute from './PrivetRoute';
 
 export const router = createBrowserRouter([
   {
@@ -48,6 +51,22 @@ export const router = createBrowserRouter([
       {
         path: '/blog',
         element: <Blog />,
+      },
+      {
+        path: '/myreviews',
+        element: (
+          <PrivetRoute>
+            <MyReview />
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: '/addservice',
+        element: (
+          <PrivetRoute>
+            <AddReview />
+          </PrivetRoute>
+        ),
       },
       // {
       //   path: '/reviews',

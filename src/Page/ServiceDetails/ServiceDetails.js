@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useContext, useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Review from '../../components/Review/Review';
 import { AuthContext } from '../../context/UserContext';
 
@@ -63,24 +63,33 @@ const ServiceDetails = () => {
         </div>
       </div>
       {/* review box */}
-      <div className='review-write-section mt-5'>
-        <h2 className='text-center'>Write Some Reviews</h2>
-        <form onSubmit={handleReviewSubmit}>
-          <div className='mb-3'>
-            <textarea
-              className='form-control'
-              name='textarea'
-              id='exampleFormControlTextarea1'
-              rows='3'
-              placeholder='Write something'
-              required
-            ></textarea>
-          </div>
-          <button className='btn btn-primary' type='submit'>
-            Add Review
-          </button>
-        </form>
-      </div>
+      {user?.uid ? (
+        <div className='review-write-section mt-5'>
+          <h2 className='text-center'>Write Some Reviews</h2>
+          <form onSubmit={handleReviewSubmit}>
+            <div className='mb-3'>
+              <textarea
+                className='form-control'
+                name='textarea'
+                id='exampleFormControlTextarea1'
+                rows='3'
+                placeholder='Write something'
+                required
+              ></textarea>
+            </div>
+            <button className='btn btn-primary' type='submit'>
+              Add Review
+            </button>
+          </form>
+        </div>
+      ) : (
+        <div className='card p-3 mt-5'>
+          <Link to='/login' className='text-center'>
+            <h2> Please Login into, Add Review!!!</h2>
+          </Link>
+        </div>
+      )}
+
       {/* review cards */}
       {reviewData.length > 0 ? (
         <div className='review-section'>

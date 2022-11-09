@@ -52,10 +52,14 @@ const Navbar = () => {
                 {user?.uid ? (
                   <div className='me-2 d-lg-flex'>
                     <li className='nav-item'>
-                      <Link className='nav-link'>My Reviews</Link>
+                      <Link to='/myreviews' className='nav-link'>
+                        My Reviews
+                      </Link>
                     </li>
                     <li className='nav-item'>
-                      <Link className='nav-link'>Add Service</Link>
+                      <Link to='/addservice' className='nav-link'>
+                        Add Service
+                      </Link>
                     </li>
                     <button className='btn btn-custom' onClick={handleLogOut}>
                       Logout
