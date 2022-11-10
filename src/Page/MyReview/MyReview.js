@@ -5,10 +5,12 @@ import { AuthContext } from '../../context/UserContext';
 import ReviewRow from './ReviewRow/ReviewRow';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from '../../hooks/useTitle';
 
 const MyReview = () => {
   const { user } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
+  useTitle('My Reviews');
 
   const notify = () => toast('Delete Successfully');
 

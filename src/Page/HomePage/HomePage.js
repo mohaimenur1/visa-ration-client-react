@@ -8,9 +8,11 @@ import viva from './img/viva.png';
 import { useLoaderData } from 'react-router-dom';
 import ServiceCard from '../../components/ServiceCard/ServiceCard';
 import HomeCard from '../../components/HomeCard/HomeCard';
+import useTitle from '../../hooks/useTitle';
 
 const HomePage = () => {
   const services = useLoaderData();
+  useTitle('Home Page');
   return (
     <div>
       <div className='banner container'>

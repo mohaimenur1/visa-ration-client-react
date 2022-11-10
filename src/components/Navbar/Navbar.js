@@ -3,6 +3,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/UserContext';
+import logo from './lg.png';
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
@@ -16,8 +17,17 @@ const Navbar = () => {
     <div>
       <nav className='navbar navbar-expand-lg bg-light'>
         <div className='container'>
-          <Link to='/' className='navbar-brand' href='#'>
-            Visa-Ration
+          <Link
+            to='/'
+            className='navbar-brand d-flex align-items-center justify-content-center'
+          >
+            <img
+              src={logo}
+              style={{ width: '50px', height: '50px' }}
+              alt='Logo'
+              className='d-inline-block align-text-top'
+            />
+            <span className='fw-bold h2'>Visa-Ration</span>
           </Link>
           <button
             className='navbar-toggler'

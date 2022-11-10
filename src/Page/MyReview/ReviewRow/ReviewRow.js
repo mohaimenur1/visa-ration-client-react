@@ -42,14 +42,14 @@ const ReviewRow = ({ review, handleDelete }) => {
             type='button'
             className='btn btn-link btn-sm btn-rounded'
           >
-            <i class='fa fa-pencil-square-o'></i>
+            <i className='fa fa-pencil-square-o'></i>
           </Link>
           <button
             onClick={() => handleDelete(_id)}
             type='button'
             className='btn btn-link btn-sm btn-rounded'
           >
-            <i class='fa fa-trash'></i>
+            <i className='fa fa-trash'></i>
           </button>
         </td>
       </tr>

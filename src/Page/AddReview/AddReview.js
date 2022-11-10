@@ -3,9 +3,11 @@
 import React from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from '../../hooks/useTitle';
 
 const AddReview = () => {
   const notify = () => toast('Service Successfully Added.');
+  useTitle('Add Review');
   const handleSubmit = (e) => {
     e.preventDefault();
 

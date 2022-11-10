@@ -4,11 +4,13 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Review from '../../components/Review/Review';
 import { AuthContext } from '../../context/UserContext';
+import useTitle from '../../hooks/useTitle';
 
 const ServiceDetails = () => {
   const details = useLoaderData();
   const { user } = useContext(AuthContext);
   const [reviewData, setReviewData] = useState({});
+  useTitle('Service Details');
   // console.log(details);
   const handleReviewSubmit = (e) => {
     e.preventDefault();
