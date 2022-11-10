@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 
-const ReviewRow = ({ review }) => {
-  const { service, servicename, textarea, useremail, username } = review;
+const ReviewRow = ({ review, handleDelete }) => {
+  const { _id, service, servicename, textarea, useremail, username } = review;
   const [reviewService, setReviewService] = useState({});
 
   useEffect(() => {
@@ -11,6 +11,7 @@ const ReviewRow = ({ review }) => {
       .then((res) => res.json())
       .then((data) => setReviewService(data));
   }, [service]);
+
   return (
     <>
       <tr>
@@ -38,7 +39,11 @@ const ReviewRow = ({ review }) => {
           <button type='button' className='btn btn-link btn-sm btn-rounded'>
             <i class='fa fa-pencil-square-o'></i>
           </button>
-          <button type='button' className='btn btn-link btn-sm btn-rounded'>
+          <button
+            onClick={() => handleDelete(_id)}
+            type='button'
+            className='btn btn-link btn-sm btn-rounded'
+          >
             <i class='fa fa-trash'></i>
           </button>
         </td>
