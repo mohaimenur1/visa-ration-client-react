@@ -1,0 +1,18 @@
+.bg-footer {
+  /* background-color: rgb(211, 96, 70); */
+  color: black;
+  background: rgb(226, 113, 88);
+  background: linear-gradient(
+    90deg,
+    rgba(90, 116, 181, 0.516) 11%,
+    rgba(74, 212, 237, 0.2861519607843137) 87%
+  );
+}
+
+.bg-sub-footer {
+  background-color: rgba(238, 234, 234, 0.607);
+}
+
+.icon-text {
+  color: white;
+}

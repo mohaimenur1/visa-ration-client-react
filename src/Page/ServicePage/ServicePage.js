@@ -26,7 +26,7 @@ const ServicePage = () => {
         </div>
       ) : (
         <div className="container">
-          <h2>ServicePage</h2>
+          <h2 className="text-center mt-3 mb-3">ServicePage</h2>
           <div className="row g-3">
             {services.map((service) => {
               return <ServiceCard key={service._id} service={service} />;

@@ -1,12 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ReactReadMoreReadLess from "react-read-more-read-less";
+import { PhotoProvider, PhotoView } from "react-photo-view";
+import "react-photo-view/dist/react-photo-view.css";
 
 const ServiceCard = ({ service }) => {
   return (
     <div className="col-lg-4">
       <div className="card">
-        <img src={service.img} className="card-img-top img-fluid" alt="..." />
+        <PhotoProvider>
+          <PhotoView src={service.img}>
+            <img
+              src={service.img}
+              className="card-img-top img-fluid"
+              alt="..."
+            />
+          </PhotoView>
+        </PhotoProvider>
+        {/* <img src={service.img} className="card-img-top img-fluid" alt="..." /> */}
         <div className="card-body">
           <h5 className="card-title">{service.title}</h5>
           <p>
