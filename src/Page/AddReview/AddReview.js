@@ -1,17 +1,17 @@
 /** @format */
 
-import React from 'react';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import useTitle from '../../hooks/useTitle';
+import React from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import useTitle from "../../hooks/useTitle";
 
 const AddReview = () => {
-  const notify = () => toast('Service Successfully Added.');
-  useTitle('Add Review');
+  const notify = () => toast("Service Successfully Added.");
+  useTitle("Add Review");
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log('this is submit');
+    console.log("this is submit");
 
     const title = e.target.title.value;
     const price = e.target.price.value;
@@ -49,13 +49,16 @@ const AddReview = () => {
 
     // console.log(service);
 
-    fetch('http://localhost:5000/services', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(service),
-    })
+    fetch(
+      "https://b6a11-service-review-server-side-mohaimenur1.vercel.app/services",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(service),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged);
@@ -67,47 +70,47 @@ const AddReview = () => {
   };
 
   return (
-    <div className='container'>
+    <div className="container">
       <ToastContainer />
-      <h2 className='text-center mt-4 mb-4'>Adding Service</h2>
+      <h2 className="text-center mt-4 mb-4">Adding Service</h2>
       <form onSubmit={handleSubmit}>
-        <div className='mb-3'>
+        <div className="mb-3">
           <input
-            type='text'
-            name='title'
-            className='form-control'
-            id='exampleFormControlInput1'
-            placeholder='Title'
+            type="text"
+            name="title"
+            className="form-control"
+            id="exampleFormControlInput1"
+            placeholder="Title"
           />
         </div>
-        <div className='mb-3'>
+        <div className="mb-3">
           <input
-            type='text'
-            name='price'
-            className='form-control'
-            id='exampleFormControlInput1'
-            placeholder='price'
+            type="text"
+            name="price"
+            className="form-control"
+            id="exampleFormControlInput1"
+            placeholder="price"
           />
         </div>
-        <div className='mb-3'>
+        <div className="mb-3">
           <input
-            type='text'
-            name='description'
-            className='form-control'
-            id='exampleFormControlInput1'
-            placeholder='description'
+            type="text"
+            name="description"
+            className="form-control"
+            id="exampleFormControlInput1"
+            placeholder="description"
           />
         </div>
-        <div className='mb-3'>
+        <div className="mb-3">
           <input
-            type='text'
-            name='img'
-            className='form-control'
-            id='exampleFormControlInput1'
-            placeholder='img'
+            type="text"
+            name="img"
+            className="form-control"
+            id="exampleFormControlInput1"
+            placeholder="img"
           />
         </div>
-        <button type='submit' className='btn btn-primary btn-block mb-4'>
+        <button type="submit" className="btn btn-primary btn-block mb-4">
           Add Service
         </button>
       </form>

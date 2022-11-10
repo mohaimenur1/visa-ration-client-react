@@ -1,60 +1,66 @@
 /** @format */
 
-import { createBrowserRouter } from 'react-router-dom';
-import Review from '../components/Review/Review';
-import Main from '../layout/Main';
-import AddReview from '../Page/AddReview/AddReview';
-import Blog from '../Page/Blog/Blog';
-import HomePage from '../Page/HomePage/HomePage';
-import Login from '../Page/Login/Login';
-import EditReview from '../Page/MyReview/EditReview/EditReview';
-import MyReview from '../Page/MyReview/MyReview';
-import Register from '../Page/Register/Register';
-import ServiceDetails from '../Page/ServiceDetails/ServiceDetails';
-import ServicePage from '../Page/ServicePage/ServicePage';
-import Services from '../Page/Services/Services';
-import PrivetRoute from './PrivetRoute';
+import { createBrowserRouter } from "react-router-dom";
+import Review from "../components/Review/Review";
+import Main from "../layout/Main";
+import AddReview from "../Page/AddReview/AddReview";
+import Blog from "../Page/Blog/Blog";
+import HomePage from "../Page/HomePage/HomePage";
+import Login from "../Page/Login/Login";
+import EditReview from "../Page/MyReview/EditReview/EditReview";
+import MyReview from "../Page/MyReview/MyReview";
+import Register from "../Page/Register/Register";
+import ServiceDetails from "../Page/ServiceDetails/ServiceDetails";
+import ServicePage from "../Page/ServicePage/ServicePage";
+import Services from "../Page/Services/Services";
+import PrivetRoute from "./PrivetRoute";
 
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <Main />,
     children: [
       {
-        path: '/',
+        path: "/",
         loader: async () => {
-          return fetch('http://localhost:5000/home');
+          return fetch(
+            "https://b6a11-service-review-server-side-mohaimenur1.vercel.app/home"
+          );
         },
         element: <HomePage />,
       },
       {
-        path: '/service',
+        path: "/service",
         loader: async () => {
-          return fetch('http://localhost:5000/services');
+          return fetch(
+            "https://b6a11-service-review-server-side-mohaimenur1.vercel.app/services"
+          );
         },
         element: <ServicePage />,
       },
       {
-        path: '/service/:id',
+        path: "/service/:id",
         loader: async ({ params }) => {
-          return fetch(`http://localhost:5000/services/${params.id}`);
+          return fetch(
+            `https://b6a11-service-review-server-side-mohaimenur1.vercel.app/services/${params.id}`
+          );
         },
         element: <ServiceDetails />,
       },
       {
-        path: '/login',
+        path: "/login",
         element: <Login />,
       },
       {
-        path: '/register',
+        path: "/register",
         element: <Register />,
       },
       {
-        path: '/blog',
+        path: "/blog",
         element: <Blog />,
       },
       {
-        path: '/myreviews',
+        path: "/myreviews",
         element: (
           <PrivetRoute>
             <MyReview />
@@ -62,7 +68,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: '/addservice',
+        path: "/addservice",
         element: (
           <PrivetRoute>
             <AddReview />
@@ -70,9 +76,11 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: '/editreview/:id',
+        path: "/editreview/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/review/${params.id}`),
+          fetch(
+            `https://b6a11-service-review-server-side-mohaimenur1.vercel.app/review/${params.id}`
+          ),
         element: (
           <PrivetRoute>
             <EditReview />
@@ -82,7 +90,7 @@ export const router = createBrowserRouter([
       // {
       //   path: '/reviews',
       //   loader: async () => {
-      //     return fetch('http://localhost:5000/reviews');
+      //     return fetch('https://b6a11-service-review-server-side-mohaimenur1.vercel.app/reviews');
       //   },
       //   element: <Review />,
       // },
