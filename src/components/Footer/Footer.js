@@ -16,10 +16,9 @@ const Footer = () => {
                   <i className="fas fa-gem me-3 "></i>Visaration
                 </h6>
                 <p className="">
-                  Here you can find your expected program. Educator is not only
-                  the best course provider but also no one give that much amount
-                  of course to the student. Our target is to reach the highest
-                  amount of students who can beat anywhere.
+                  Here you can find your expected Service. visaration is not
+                  only the best Service provider.Target is to reach the highest
+                  amount of client no one beat anywhere.
                 </p>
               </div>
 
