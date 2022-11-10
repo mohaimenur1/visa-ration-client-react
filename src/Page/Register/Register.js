@@ -61,7 +61,7 @@ const Register = () => {
         <img src={RegisterImg} alt="" className="img-fluid mt-5" />
       </div> */}
 
-          <div className="col-lg-6">
+          <div className="col card">
             <h3 className="text-center mt-4 text-decoration-underline link-text-color">
               Register Form
             </h3>
